@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lwjgl">
+    <CLASSES>
+      <root url="jar://E:/Projects/Personnal/BuildMyOwnX/240325PB0-VoxelEngine/LWJGL3 + Assets/LWJGL3 + Assets/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+      <root url="jar://E:/Projects/Personnal/BuildMyOwnX/240325PB0-VoxelEngine/LWJGL3 + Assets/LWJGL3 + Assets/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+      <root url="jar://E:/Projects/Personnal/BuildMyOwnX/240325PB0-VoxelEngine/LWJGL3 + Assets/LWJGL3 + Assets/lwjgl-2.9.1/jar/PNGDecoder.jar!/" />
+      <root url="jar://E:/Projects/Personnal/BuildMyOwnX/240325PB0-VoxelEngine/LWJGL3 + Assets/LWJGL3 + Assets/lwjgl-2.9.1/jar/slick-util.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://E:/Projects/Personnal/BuildMyOwnX/240325PB0-VoxelEngine/LWJGL3 + Assets/LWJGL3 + Assets/lwjgl-2.9.1/native/windows" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
