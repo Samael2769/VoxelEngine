@@ -45,7 +45,7 @@ public class MainGameLoop {
         shader1 = shader;
 
         RawModel model = loader.loadToVAO(CubeModel.vertices, CubeModel.indices, CubeModel.uv);
-        ModelTexture texture = new ModelTexture(loader.loadTexture("dirtTex"));
+        ModelTexture texture = new ModelTexture(loader.loadTexture("DefaultPack"));
         TexturedModel texturedModel = new TexturedModel(model, texture);
 
         Camera camera = new Camera(new Vector3f(0, 0, 0), 0, 0, 0);
@@ -63,7 +63,7 @@ public class MainGameLoop {
 
                             for (int x = 0; x < 32; x++) {
                                 for (int z = 0; z < 32; z++) {
-                                    blocks.add(new Block(x, (int) generator.generateHeight(x + (i * 32), z + (j * 32)), z, Block.TYPE.DIRT));
+                                    blocks.add(new Block(x, (int) generator.generateHeight(x + (i * 32), z + (j * 32)), z, Block.GRASS));
                                 }
                             }
                             Chunk chunk = new Chunk(blocks, new Vector3f(i * 32, 0 * 32, j * 32));
@@ -75,25 +75,6 @@ public class MainGameLoop {
 
             }
         }}).start();
-
-        /*List<Block> blocks = new ArrayList<Block>();
-
-        for (int x = 0; x < 10; x++) {
-            for (int y = 0; y < 10; y++) {
-                for (int z = 0; z < 10; z++) {
-
-                    blocks.add(new Block(x, y, z, Block.TYPE.DIRT));
-
-                }
-            }
-        }
-
-        Chunk chunk = new Chunk(blocks, new Vector3f(0, 0, 0));
-        ChunkMesh mesh = new ChunkMesh(chunk);
-
-        RawModel model123 = loader.loadToVAO(mesh.positions, mesh.uvs);
-        TexturedModel texturedModel123 = new TexturedModel(model123, texture);
-        Entity entity = new Entity(texturedModel123, new Vector3f(0,0,0), 0, 0, 0, 1);*/
 
         // Main loop
         int index = 0;
@@ -107,6 +88,11 @@ public class MainGameLoop {
                 TexturedModel texturedModel123 = new TexturedModel(model123, texture);
                 Entity entity = new Entity(texturedModel123, chunks.get(index).chunk.origin, 0, 0, 0, 1);
                 entities.add(entity);
+
+                chunks.get(index).positions = null;
+                chunks.get(index).uvs = null;
+                chunks.get(index).normals = null;
+
 
                 index++;
             }
